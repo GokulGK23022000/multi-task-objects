@@ -1,0 +1,102 @@
+<!doctype html>
+	<html>
+		<head>
+			<title>JS cards</title>
+			<script src="https://kit.fontawesome.com/12bbc490c3.js" crossorigin="anonymous"></script>
+			<style>
+				#card-list{
+					display:flex;
+					text-align:center;
+					padding:10px;
+					width:90%;
+				}
+				#card-list .cards{
+				border:2px solid grey;
+				}
+				i{
+				font-size:35px;
+				margin-top:12px;
+				}
+				h2{
+				margin-top:20px;
+				}
+			
+			
+			</style>
+		</head>
+		<body>
+			<div id="card-list"></div>
+			<script>
+				let cards=[
+				{
+					icon:"fa-solid fa-bullseye",
+					title:"100% Placement Assured",
+					content:"The program guarantees job placement upon completion, providing students with a sense of security to excel in their training."
+				},
+				{
+					icon:"fa-solid fa-photo-film",
+					title:"Live Classes + Recording Access",
+					content:"Students have access to both live classes and recordings, giving them flexibility and the ability to revisit class material at any time."
+				},
+				{
+					icon:"fa-solid fa-user-check",
+					title:"Working Professionals as Mentors",
+					content:"The program utilizes experienced working professionals as mentors, providing students with practical insights and real-world knowledge."
+				}
+				]
+					console.log(cards)
+					
+				<!-- create element -->
+				
+				function elementCreate(cards){
+				
+				var cardIcon= document.createElement("i");
+				var cardTitle= document.createElement("h2");
+				var cardContent= document.createElement("p");
+				var cardSection= document.createElement("div");
+				
+				<!-- object value assign to element -->
+				
+				cardTitle.innerHTML = cards.title;
+				cardContent.innerHTML = cards.content;
+				
+				<!-- add class  to element -->
+
+			cardIcon.setAttribute("class",cards.icon);	
+			cardTitle.setAttribute("class","title");
+			cardContent.setAttribute("class","content");
+			cardSection.setAttribute("class","cards");
+
+				console.log(cardIcon,cardTitle,cardContent);
+				
+				
+				<!-- Appendchild -->
+				
+				cardSection.appendChild(cardIcon);
+				cardSection.appendChild(cardTitle);
+				cardSection.appendChild(cardContent);
+				
+				<!-- append dom -->
+				
+				var cardTitle = document.getElementById("card-list")
+				cardTitle.appendChild(cardSection)
+					
+				}
+				
+				for(let i=0;i< cards.length;i++){
+				elementCreate(cards[i])
+				
+				}
+			
+			
+				
+			
+			
+			
+			
+			
+		
+			</script>
+		</body>
+	</html>	
+			
